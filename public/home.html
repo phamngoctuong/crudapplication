@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Web site created using create-react-app">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <title>React App</title>
+  <style>
+  	body {
+		  margin: 0;
+		  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	    sans-serif;
+	  	-webkit-font-smoothing: antialiased;
+	  	-moz-osx-font-smoothing: grayscale;
+		}
+	</style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <div class="container-fluid bg-light">
+      <div class="container p-5">
+        <div class="card shadow-sm">
+          <h1 class="card-header text-center text-uppercase text-muted">React PHP CRUD Application</h1>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-sm-6"><label class="font-weight-bold">Name</label><input type="text" name="username" class="form-control" placeholder="Name"></div>
+                    <div class="form-group col-sm-6"><label class="font-weight-bold">Email</label><input type="email" name="useremail" class="form-control" placeholder="Email"></div>
+                    <div class="form-group col-sm-12 text-right"><button type="submit" class="btn btn-primary">Add user</button></div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-8">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Name 5</td>
+                      <td>name4@gmail.com</td>
+                      <td><button class="btn btn-dark mr-2">Edit</button><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                      <td>Name 3</td>
+                      <td>name3@gmail.com</td>
+                      <td><button class="btn btn-dark mr-2">Edit</button><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                    <tr>
+                      <td>Name 2</td>
+                      <td>name2@gmail.com</td>
+                      <td><button class="btn btn-dark mr-2">Edit</button><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
