@@ -41,5 +41,31 @@ class Actions extends Component {
       users
     });
   }
+  handleUpdate = (id,user_name,user_email) => {
+    Axios.post('http://localhost/php-react/update-user.php', {
+      id: id,
+      user_name: user_name,
+      user_email: user_email
+    }).then(({data})=>{
+      if (data.success === 1) {
+        let users = this.state.users.map(user => {
+          if(user.id === id) {
+              user.user_name = user_name;
+              user.user_email = user_email;
+              user.isEditing = false;
+              return user;
+            }
+            return user;
+          }
+        );
+        this.setState({
+          users
+        });
+      };
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }
 export default Actions;

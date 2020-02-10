@@ -6,7 +6,7 @@ class GetUsers extends Component {
     this.context.get_users()
   }
   handleUpdate = (id) => {
-    this.context.handleUpdate(id, this.name.value, this.email.value);
+    this.context.handleUpdate(id,this.name.value,this.email.value);
   }
   render() {
     let allUsers;
@@ -15,13 +15,13 @@ class GetUsers extends Component {
       (
         <tr key={id}>
           <td>
-            <input className="form-control" type="text" defaultValue={user_name}/>
+            <input className="form-control" type="text" ref={(item)=>this.name = item} defaultValue={user_name}/>
           </td>
           <td>
-            <input className="form-control" type="email" defaultValue={user_email}/>
+            <input className="form-control" type="email" ref={(item)=>this.email = item} defaultValue={user_email}/>
           </td>
           <td>
-            <button className="btn btn-success mr-2">Save</button>
+            <button className="btn btn-success mr-2" onClick={() => this.handleUpdate(id)}>Save</button>
             <button className="btn btn-light" onClick={() => this.context.cancelEdit(id)}>Cancel</button>
           </td>
         </tr>

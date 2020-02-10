@@ -8,7 +8,8 @@ class App extends Actions {
       all_users: this.state.users,
       get_users: this.fetchUsers,
       editMode: this.editMode,
-      cancelEdit: this.cancelEdit
+      cancelEdit: this.cancelEdit,
+      handleUpdate: this.handleUpdate
     }
     return (
       <Provider value={contextValue}>
