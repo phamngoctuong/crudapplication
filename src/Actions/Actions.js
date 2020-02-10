@@ -67,5 +67,25 @@ class Actions extends Component {
       console.log(error);
     });
   }
+  handleDelete = (id) => {
+    let deleteUser = this.state.users.filter(user => {
+      return user.id !== id;
+    });
+    Axios.post('http://localhost/php-react/delete-user.php', {
+      id: id
+    })
+    .then(({ data }) => {
+      if (data.success === 1) {
+        this.setState({
+          users: deleteUser
+        });
+      } else {
+        alert(data.msg);
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }
 export default Actions;

@@ -8,6 +8,11 @@ class GetUsers extends Component {
   handleUpdate = (id) => {
     this.context.handleUpdate(id,this.name.value,this.email.value);
   }
+  handleDelete = (id) => {// eslint-disable-next-line no-restricted-globals
+    if(confirm("Are You Sure Delete")) {
+      this.context.handleDelete(id);
+    }
+  }
   render() {
     let allUsers;
     allUsers = this.context.all_users.map(({ id, user_name, user_email, isEditing }) => {
@@ -33,7 +38,7 @@ class GetUsers extends Component {
           <td>{user_email}</td>
           <td>
             <button className="btn btn-dark mr-2" onClick={() => this.context.editMode(id)}>Edit</button>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={() => this.handleDelete(id)}>Delete</button>
           </td>
         </tr>
       );
