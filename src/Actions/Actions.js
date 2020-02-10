@@ -56,5 +56,18 @@ class Actions extends Component {
         console.log(error);
       });
   }
+  cancelEdit = (id) => {
+    let users = this.state.users.map(user => {
+      if (user.id === id) {
+        user.isEditing = false;
+        return user;
+      }
+      return user
+
+    });
+    this.setState({
+      users
+    });
+  }
 }
 export default Actions;
