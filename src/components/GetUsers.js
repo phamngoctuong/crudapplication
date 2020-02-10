@@ -5,6 +5,9 @@ class GetUsers extends Component {
   componentDidMount() {
     this.context.get_users()
   }
+  handleUpdate = (id) => {
+    this.context.handleUpdate(id, this.name.value, this.email.value);
+  }
   render() {
     let allUsers;
     allUsers = this.context.all_users.map(({ id, user_name, user_email, isEditing }) => {
