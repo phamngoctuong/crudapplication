@@ -87,5 +87,29 @@ class Actions extends Component {
       console.log(error);
     });
   }
+  insertUser = (event, user_name, user_email) => {
+    event.preventDefault();
+    event.persist();
+    Axios.post('http://localhost/php-react/add-user.php', {
+      user_name: user_name,
+      user_email: user_email
+    })
+    .then(function({ data }) {
+      if (data.success === 1) {
+        this.setState({
+          users: [
+            { "id": data.id, "user_name": user_name, "user_email": user_email },
+            ...this.state.users
+          ]
+        });
+          event.target.reset();
+      }else {
+        alert(data.msg);
+      }
+    }.bind(this))
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
 }
 export default Actions;

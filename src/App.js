@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from './Context';
 import AllUsers from './components/GetUsers';
+import AddUser from './components/AddUser';
 import Actions from './Actions/Actions';
 class App extends Actions {
   render() {
@@ -10,7 +11,8 @@ class App extends Actions {
       editMode: this.editMode,
       cancelEdit: this.cancelEdit,
       handleUpdate: this.handleUpdate,
-      handleDelete: this.handleDelete
+      handleDelete: this.handleDelete,
+      insertUser: this.insertUser
     }
     return (
       <Provider value={contextValue}>
@@ -21,21 +23,7 @@ class App extends Actions {
               <div className="card-body">
                 <div className="row">
                   <div className="col-md-4">
-                    <form>
-                      <div className="form-row">
-                        <div className="form-group col-sm-6">
-                          <label className="font-weight-bold">Name</label>
-                          <input type="text" name="username" className="form-control" placeholder="Name" />
-                        </div>
-                        <div className="form-group col-sm-6">
-                          <label className="font-weight-bold">Email</label>
-                          <input type="email" name="useremail" className="form-control" placeholder="Email" />
-                        </div>
-                        <div className="form-group col-sm-12 text-right">
-                          <button type="submit" className="btn btn-primary">Add user</button>
-                        </div>
-                      </div>
-                    </form>
+                    <AddUser />
                   </div>
                   <div className="col-md-8">
                     <AllUsers/>
