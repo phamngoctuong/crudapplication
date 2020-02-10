@@ -6,7 +6,9 @@ class App extends Actions {
   render() {
     const contextValue = {
       all_users: this.state.users,
-      get_users: this.fetchUsers
+      get_users: this.fetchUsers,
+      editMode: this.editMode,
+      handleUpdate: this.handleUpdate
     }
     return (
       <Provider value={contextValue}>
